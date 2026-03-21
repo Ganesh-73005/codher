@@ -45,11 +45,6 @@ export default function FlowOfEvent() {
         }}></div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-20 right-10 w-6 h-6 bg-[#FFFF00] rotate-45 animate-float"></div>
-      <div className="absolute bottom-40 left-10 w-8 h-8 border-2 border-[#39FF14] rounded-full animate-bounce-slow"></div>
-      <div className="absolute top-1/2 right-20 text-[#FF1493] text-5xl font-black animate-pulse">*</div>
-      
       {/* Glowing Orbs */}
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#00FFFF]/10 rounded-full filter blur-[100px]"></div>
 
@@ -60,12 +55,12 @@ export default function FlowOfEvent() {
             <span className="w-2 h-2 bg-[#FF1493] rounded-full animate-pulse"></span>
             <span className="text-[#FF1493] font-bold text-sm uppercase tracking-wider">Event Timeline</span>
           </div>
-          
+
           <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-4 tracking-tight leading-none">
             <span className="block">FLOW OF</span>
             <span className="block text-[#39FF14] drop-shadow-[0_0_30px_rgba(57,255,20,0.5)]">EVENT</span>
           </h2>
-          
+
           <p className="text-white/70 text-lg max-w-2xl mx-auto font-medium">
             Your journey through <span className="text-[#00FFFF] font-bold">CodHer'26</span> across multiple platforms
           </p>
@@ -73,30 +68,19 @@ export default function FlowOfEvent() {
 
         {/* Timeline Flow */}
         <div className="relative">
-          {/* Connection Line - Desktop */}
+          {/* Connection Line - Desktop only */}
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#39FF14] via-[#FF1493] to-[#00FFFF] transform -translate-y-1/2 z-0"></div>
 
           {/* Platform Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-6 relative z-10">
             {platforms.map((platform, index) => (
-              <div key={index} className="relative group">
-                {/* Connection Arrow - Mobile */}
-                {index < platforms.length - 1 && (
-                  <div className="lg:hidden flex justify-center my-4">
-                    <div className="flex flex-col items-center gap-2">
-                      <div className="w-1 h-8 bg-gradient-to-b" style={{
-                        backgroundImage: `linear-gradient(to bottom, ${platform.color}, ${platforms[index + 1].color})`
-                      }}></div>
-                      <i className="ri-arrow-down-line text-2xl" style={{ color: platforms[index + 1].color }}></i>
-                    </div>
-                  </div>
-                )}
+              <div key={index} className="relative group flex flex-col items-stretch">
 
                 {/* Card */}
                 <div className={`relative bg-[#0a0e1a] border-2 ${platform.borderColor} p-6 hover:${platform.shadowColor} transition-all duration-500 transform hover:-translate-y-2 cursor-pointer`}>
                   {/* Step Number Badge */}
-                  <div className="absolute -top-4 -left-4 w-12 h-12 border-2 flex items-center justify-center font-display text-2xl font-black" 
-                    style={{ 
+                  <div className="absolute -top-4 -left-4 w-12 h-12 border-2 flex items-center justify-center font-display text-2xl font-black"
+                    style={{
                       backgroundColor: platform.color,
                       color: '#0a0e1a',
                       borderColor: platform.color
@@ -134,17 +118,35 @@ export default function FlowOfEvent() {
                     </div>
 
                     {/* Decorative Corner Elements */}
-                    <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 opacity-50" 
+                    <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 opacity-50"
                       style={{ borderColor: platform.color }}></div>
-                    <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 opacity-50" 
+                    <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 opacity-50"
                       style={{ borderColor: platform.color }}></div>
                   </div>
                 </div>
 
+                {/* Mobile Arrow — rendered AFTER the card, only between cards */}
+                {index < platforms.length - 1 && (
+                  <div className="lg:hidden flex justify-center py-4">
+                    <div className="flex flex-col items-center gap-1">
+                      <div
+                        className="w-0.5 h-8"
+                        style={{
+                          background: `linear-gradient(to bottom, ${platform.color}, ${platforms[index + 1].color})`
+                        }}
+                      ></div>
+                      <i
+                        className="ri-arrow-down-line text-2xl"
+                        style={{ color: platforms[index + 1].color }}
+                      ></i>
+                    </div>
+                  </div>
+                )}
+
                 {/* Desktop Arrow */}
                 {index < platforms.length - 1 && (
                   <div className="hidden lg:flex absolute top-1/2 -right-8 transform -translate-y-1/2 z-20">
-                    <i className="ri-arrow-right-line text-4xl font-black" 
+                    <i className="ri-arrow-right-line text-4xl font-black"
                       style={{ color: platforms[index + 1].color }}></i>
                   </div>
                 )}
