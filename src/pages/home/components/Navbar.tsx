@@ -22,7 +22,8 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'ABOUT', id: 'about' },
-    { name: 'SPEAKERS', id: 'speakers' },
+    { name: 'PRE-EVENTS', id: 'pre-events' },
+    { name: 'FLOW', id: 'flow' },
     { name: 'TRACKS', id: 'tracks' },
     { name: 'PRIZES', id: 'prizes' },
     { name: 'FAQ', id: 'faq' },
@@ -30,16 +31,15 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'bg-[#0D0221]/95 backdrop-blur-lg border-b-2 border-[#39FF14]' 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+          ? 'bg-[#0D0221]/95 backdrop-blur-lg border-b-2 border-[#39FF14]'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <div className="w-full px-4 sm:px-6 lg:px-12">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <button 
+          <button
             onClick={() => scrollToSection('hero')}
             className="font-display text-xl sm:text-2xl lg:text-3xl tracking-tighter hover:scale-105 transition-transform cursor-pointer whitespace-nowrap"
           >
