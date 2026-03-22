@@ -1,14 +1,14 @@
 export default function PreEvents() {
   const events = [
     {
-      image: 'https://codher24.vercel.app/assets/logicLinkPoster.jpeg',
-      title: 'LogicLink - Digital Expedition',
-      description: 'LogicLink-Digital Expedition invites participants to embark on an individual coding adventure, facing challenges sequentially. The primary goal is to navigate the digital expedition, overcoming coding challenges at each level.'
+      image: 'https://auceg.acm.org/assets/codher/e1.jpg',
+      title: 'The Great Internet Treasure Hunt',
+      description: 'Tired of roaming around for clues? This challenge takes place entirely online. Rely on your logic and instincts as you navigate through a series of interconnected links. Each correct step moves you forward, while every mistake brings you closer to elimination.'
     },
     {
-      image: 'https://codher24.vercel.app/assets/PixelPoster.jpeg',
-      title: 'Pixel Perfect!',
-      description: 'Event merges art and web-dev into one. Participants try to craft the best art pieces they can within the stipulated time limit... with a twist!'
+      image: 'https://img.freepik.com/free-vector/alert-coming-soon-stay-tuned-background-modern-style_1017-57508.jpg',
+      title: 'Deck & Deal',
+      description: 'Event description coming soon... stay tuned!!'
     }
   ];
 
