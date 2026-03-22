@@ -3,12 +3,19 @@ export default function PreEvents() {
     {
       image: 'https://auceg.acm.org/assets/codher/e1.jpg',
       title: 'The Great Internet Treasure Hunt',
-      description: 'Tired of roaming around for clues? This challenge takes place entirely online. Rely on your logic and instincts as you navigate through a series of interconnected links. Each correct step moves you forward, while every mistake brings you closer to elimination.'
+      description:
+        'Tired of roaming around for clues? This challenge takes place entirely online. Rely on your logic and instincts as you navigate through a series of interconnected links. Each correct step moves you forward, while every mistake brings you closer to elimination.'
     },
     {
       image: 'https://img.freepik.com/free-vector/alert-coming-soon-stay-tuned-background-modern-style_1017-57508.jpg',
       title: 'Deck & Deal',
       description: 'Event description coming soon... stay tuned!!'
+    },
+    {
+      image: 'https://img.freepik.com/free-vector/alert-coming-soon-stay-tuned-background-modern-style_1017-57508.jpg',
+      title: 'Memeify Computers',
+      description:
+        "Launched midway between the above two events, this event will run until CodHer's official launch."
     }
   ];
 
@@ -25,7 +32,8 @@ export default function PreEvents() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Updated grid */}
+        <div className="grid md:grid-cols-3 gap-8">
           {events.map((event, index) => (
             <div
               key={index}
